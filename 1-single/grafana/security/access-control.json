@@ -6,12 +6,38 @@
   },
   "spec": {
     "annotations": {
-      "list": []
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations \u0026 Alerts",
+          "type": "dashboard"
+        }
+      ]
     },
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 1,
-    "links": [],
+    "links": [
+      {
+        "asDropdown": false,
+        "icon": "external link",
+        "includeVars": false,
+        "keepTime": false,
+        "tags": [],
+        "targetBlank": true,
+        "title": "Source (GitHub)",
+        "tooltip": "View source file in repository",
+        "type": "link",
+        "url": "https://github.com/wsilva/campfire-using-git-sync-demo/blob/main/1-single/grafana/security/access-control.json"
+      }
+    ],
     "panels": [
       {
         "datasource": {
@@ -29,7 +55,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "yellow",
@@ -57,23 +83,29 @@
           "graphMode": "area",
           "justifyMode": "auto",
           "orientation": "auto",
+          "percentChangeColorMode": "standard",
           "reduceOptions": {
-            "values": false,
-            "calcs": ["lastNotNull"],
-            "fields": ""
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
           },
-          "textMode": "value_and_name"
+          "showPercentChange": false,
+          "textMode": "value_and_name",
+          "wideLayout": true
         },
+        "pluginVersion": "12.4.0",
         "targets": [
           {
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "A",
-            "scenarioId": "random_walk",
+            "max": 1500,
             "min": 100,
-            "max": 1500
+            "refId": "A",
+            "scenarioId": "random_walk"
           }
         ],
         "title": "Active User Sessions",
@@ -90,121 +122,10 @@
               "mode": "palette-classic"
             },
             "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 25,
-              "gradientMode": "opacity",
               "hideFrom": {
+                "legend": false,
                 "tooltip": false,
-                "viz": false,
-                "legend": false
-              },
-              "lineInterpolation": "smooth",
-              "lineWidth": 2,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 9,
-          "x": 6,
-          "y": 0
-        },
-        "id": 2,
-        "options": {
-          "legend": {
-            "calcs": ["mean", "max", "last"],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "multi",
-            "sort": "desc"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 100,
-            "max": 800,
-            "alias": "Active Sessions"
-          },
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "B",
-            "scenarioId": "random_walk",
-            "min": 50,
-            "max": 400,
-            "alias": "New Sessions"
-          },
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "C",
-            "scenarioId": "random_walk",
-            "min": 30,
-            "max": 300,
-            "alias": "Expired Sessions"
-          }
-        ],
-        "title": "User Sessions Over Time",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "hideFrom": {
-                "tooltip": false,
-                "viz": false,
-                "legend": false
+                "viz": false
               }
             },
             "mappings": []
@@ -214,7 +135,7 @@
         "gridPos": {
           "h": 8,
           "w": 9,
-          "x": 15,
+          "x": 6,
           "y": 0
         },
         "id": 3,
@@ -223,58 +144,71 @@
             "displayMode": "table",
             "placement": "right",
             "showLegend": true,
-            "values": ["value", "percent"]
+            "values": [
+              "value",
+              "percent"
+            ]
           },
           "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "sort": "desc",
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           }
         },
+        "pluginVersion": "12.4.0",
         "targets": [
           {
+            "alias": "OAuth 2.0",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 300,
             "max": 500,
-            "alias": "OAuth 2.0"
+            "min": 300,
+            "refId": "A",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "SAML",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "B",
-            "scenarioId": "random_walk",
-            "min": 200,
             "max": 400,
-            "alias": "SAML"
+            "min": 200,
+            "refId": "B",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "MFA",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "C",
-            "scenarioId": "random_walk",
-            "min": 100,
             "max": 300,
-            "alias": "MFA"
+            "min": 100,
+            "refId": "C",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Basic Auth",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "D",
-            "scenarioId": "random_walk",
-            "min": 50,
             "max": 200,
-            "alias": "Basic Auth"
+            "min": 50,
+            "refId": "D",
+            "scenarioId": "random_walk"
           }
         ],
         "title": "Authentication Methods Distribution",
@@ -291,26 +225,30 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
-              "drawStyle": "bars",
-              "fillOpacity": 100,
-              "gradientMode": "none",
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 25,
+              "gradientMode": "opacity",
               "hideFrom": {
+                "legend": false,
                 "tooltip": false,
-                "viz": false,
-                "legend": false
+                "viz": false
               },
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
+              "insertNulls": false,
+              "lineInterpolation": "smooth",
+              "lineWidth": 2,
               "pointSize": 5,
               "scaleDistribution": {
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -326,7 +264,128 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
+                }
+              ]
+            },
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 8,
+          "w": 9,
+          "x": 15,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "calcs": [
+              "mean",
+              "max",
+              "last"
+            ],
+            "displayMode": "table",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "multi",
+            "sort": "desc"
+          }
+        },
+        "pluginVersion": "12.4.0",
+        "targets": [
+          {
+            "alias": "Active Sessions",
+            "datasource": {
+              "type": "testdata",
+              "uid": "-- Grafana --"
+            },
+            "max": 800,
+            "min": 100,
+            "refId": "A",
+            "scenarioId": "random_walk"
+          },
+          {
+            "alias": "New Sessions",
+            "datasource": {
+              "type": "testdata",
+              "uid": "-- Grafana --"
+            },
+            "max": 400,
+            "min": 50,
+            "refId": "B",
+            "scenarioId": "random_walk"
+          },
+          {
+            "alias": "Expired Sessions",
+            "datasource": {
+              "type": "testdata",
+              "uid": "-- Grafana --"
+            },
+            "max": 300,
+            "min": 30,
+            "refId": "C",
+            "scenarioId": "random_walk"
+          }
+        ],
+        "title": "User Sessions Over Time",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "testdata",
+          "uid": "-- Grafana --"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "bars",
+              "fillOpacity": 100,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "never",
+              "showValues": false,
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": 0
                 },
                 {
                   "color": "yellow",
@@ -351,49 +410,54 @@
         "id": 4,
         "options": {
           "legend": {
-            "calcs": ["sum", "max"],
+            "calcs": [
+              "sum",
+              "max"
+            ],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "desc"
           }
         },
+        "pluginVersion": "12.4.0",
         "targets": [
           {
+            "alias": "Role Changes",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 0,
             "max": 100,
-            "alias": "Role Changes"
+            "min": 0,
+            "refId": "A",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Permission Grants",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "B",
-            "scenarioId": "random_walk",
-            "min": 0,
             "max": 80,
-            "alias": "Permission Grants"
+            "min": 0,
+            "refId": "B",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Permission Revocations",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "C",
-            "scenarioId": "random_walk",
-            "min": 0,
             "max": 60,
-            "alias": "Permission Revocations"
+            "min": 0,
+            "refId": "C",
+            "scenarioId": "random_walk"
           }
         ],
         "title": "Permission Changes Over Time",
@@ -410,19 +474,22 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
               "axisPlacement": "auto",
               "barAlignment": 0,
+              "barWidthFactor": 0.6,
               "drawStyle": "line",
               "fillOpacity": 30,
               "gradientMode": "opacity",
               "hideFrom": {
+                "legend": false,
                 "tooltip": false,
-                "viz": false,
-                "legend": false
+                "viz": false
               },
+              "insertNulls": false,
               "lineInterpolation": "smooth",
               "lineWidth": 2,
               "pointSize": 5,
@@ -430,6 +497,7 @@
                 "type": "linear"
               },
               "showPoints": "never",
+              "showValues": false,
               "spanNulls": false,
               "stacking": {
                 "group": "A",
@@ -445,7 +513,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 },
                 {
                   "color": "yellow",
@@ -470,41 +538,47 @@
         "id": 5,
         "options": {
           "legend": {
-            "calcs": ["mean", "max", "last"],
+            "calcs": [
+              "mean",
+              "max",
+              "last"
+            ],
             "displayMode": "table",
             "placement": "bottom",
             "showLegend": true
           },
           "tooltip": {
+            "hideZeros": false,
             "mode": "multi",
             "sort": "desc"
           }
         },
+        "pluginVersion": "12.4.0",
         "targets": [
           {
+            "alias": "API Key Requests",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 1000,
             "max": 15000,
-            "alias": "API Key Requests"
+            "min": 1000,
+            "refId": "A",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Token Requests",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "B",
-            "scenarioId": "random_walk",
-            "min": 500,
             "max": 8000,
-            "alias": "Token Requests"
+            "min": 500,
+            "refId": "B",
+            "scenarioId": "random_walk"
           }
         ],
-        "title": "API Key & Token Usage",
+        "title": "API Key \u0026 Token Usage",
         "type": "timeseries"
       },
       {
@@ -518,6 +592,7 @@
               "mode": "palette-classic"
             },
             "custom": {
+              "axisBorderShow": false,
               "axisCenteredZero": false,
               "axisColorMode": "text",
               "axisLabel": "",
@@ -525,13 +600,16 @@
               "fillOpacity": 80,
               "gradientMode": "none",
               "hideFrom": {
+                "legend": false,
                 "tooltip": false,
-                "viz": false,
-                "legend": false
+                "viz": false
               },
               "lineWidth": 1,
               "scaleDistribution": {
                 "type": "linear"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
               }
             },
             "mappings": [],
@@ -540,7 +618,7 @@
               "steps": [
                 {
                   "color": "green",
-                  "value": null
+                  "value": 0
                 }
               ]
             },
@@ -558,6 +636,7 @@
         "options": {
           "barRadius": 0,
           "barWidth": 0.97,
+          "fullHighlight": false,
           "groupWidth": 0.7,
           "legend": {
             "calcs": [],
@@ -569,76 +648,83 @@
           "showValue": "auto",
           "stacking": "none",
           "tooltip": {
+            "hideZeros": false,
             "mode": "single",
             "sort": "none"
           },
           "xTickLabelRotation": 0,
           "xTickLabelSpacing": 0
         },
+        "pluginVersion": "12.4.0",
         "targets": [
           {
+            "alias": "Admin",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 500,
             "max": 2000,
-            "alias": "Admin"
+            "min": 500,
+            "refId": "A",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Developer",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "B",
-            "scenarioId": "random_walk",
-            "min": 1000,
             "max": 5000,
-            "alias": "Developer"
+            "min": 1000,
+            "refId": "B",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Operator",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "C",
-            "scenarioId": "random_walk",
-            "min": 800,
             "max": 4000,
-            "alias": "Operator"
+            "min": 800,
+            "refId": "C",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Viewer",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "D",
-            "scenarioId": "random_walk",
-            "min": 2000,
             "max": 10000,
-            "alias": "Viewer"
+            "min": 2000,
+            "refId": "D",
+            "scenarioId": "random_walk"
           },
           {
+            "alias": "Guest",
             "datasource": {
               "type": "testdata",
               "uid": "-- Grafana --"
             },
-            "refId": "E",
-            "scenarioId": "random_walk",
-            "min": 300,
             "max": 1500,
-            "alias": "Guest"
+            "min": 300,
+            "refId": "E",
+            "scenarioId": "random_walk"
           }
         ],
         "title": "User Sessions by Role",
         "type": "barchart"
       }
     ],
-    "schemaVersion": 38,
-    "style": "dark",
-    "tags": ["security", "access-control", "authentication"],
+    "preload": false,
+    "refresh": "",
+    "schemaVersion": 42,
+    "tags": [
+      "security",
+      "access-control",
+      "authentication"
+    ],
     "templating": {
       "list": []
     },
@@ -647,10 +733,8 @@
       "to": "now"
     },
     "timepicker": {},
-    "timezone": "",
-    "title": "Access Control & Authentication",
-    "uid": "access-control",
-    "version": 1,
+    "timezone": "browser",
+    "title": "Access Control \u0026 Authentication",
     "weekStart": ""
   }
 }
