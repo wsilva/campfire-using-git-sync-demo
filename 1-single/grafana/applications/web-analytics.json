@@ -1,666 +1,970 @@
 {
-  "apiVersion": "dashboard.grafana.app/v1beta1",
+  "apiVersion": "dashboard.grafana.app/v2",
   "kind": "Dashboard",
   "metadata": {
     "name": "web-analytics"
   },
   "spec": {
-    "annotations": {
-      "list": []
-    },
-    "editable": true,
-    "fiscalYearStartMonth": 0,
-    "graphTooltip": 1,
-    "links": [],
-    "panels": [
+    "annotations": [
       {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 20,
-              "gradientMode": "opacity",
-              "hideFrom": {
-                "tooltip": false,
-                "viz": false,
-                "legend": false
-              },
-              "lineInterpolation": "smooth",
-              "lineWidth": 2,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "max": 10000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 0
-        },
-        "id": 1,
-        "options": {
-          "legend": {
-            "calcs": ["mean", "max", "last"],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "multi",
-            "sort": "desc"
-          }
-        },
-        "targets": [
-          {
+        "kind": "AnnotationQuery",
+        "spec": {
+          "builtIn": true,
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations \u0026 Alerts",
+          "query": {
             "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
+              "name": "-- Grafana --"
             },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 1000,
-            "max": 10000,
-            "alias": "Active Users"
+            "group": "grafana",
+            "kind": "DataQuery",
+            "spec": {},
+            "version": "v0"
           }
-        ],
-        "title": "Active Users",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "bars",
-              "fillOpacity": 80,
-              "gradientMode": "none",
-              "hideFrom": {
-                "tooltip": false,
-                "viz": false,
-                "legend": false
-              },
-              "lineInterpolation": "linear",
-              "lineWidth": 1,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "max": 50000,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 0
-        },
-        "id": 2,
-        "options": {
-          "legend": {
-            "calcs": ["sum", "mean"],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "multi",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 10000,
-            "max": 50000,
-            "alias": "Page Views"
-          }
-        ],
-        "title": "Page Views",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 20,
-              "gradientMode": "opacity",
-              "hideFrom": {
-                "tooltip": false,
-                "viz": false,
-                "legend": false
-              },
-              "lineInterpolation": "smooth",
-              "lineWidth": 2,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "max": 100,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 50
-                },
-                {
-                  "color": "red",
-                  "value": 70
-                }
-              ]
-            },
-            "unit": "percent"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 8
-        },
-        "id": 3,
-        "options": {
-          "legend": {
-            "calcs": ["mean", "last"],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "multi",
-            "sort": "desc"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 20,
-            "max": 80,
-            "alias": "Bounce Rate"
-          }
-        ],
-        "title": "Bounce Rate",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "palette-classic"
-            },
-            "custom": {
-              "axisCenteredZero": false,
-              "axisColorMode": "text",
-              "axisLabel": "",
-              "axisPlacement": "auto",
-              "barAlignment": 0,
-              "drawStyle": "line",
-              "fillOpacity": 20,
-              "gradientMode": "opacity",
-              "hideFrom": {
-                "tooltip": false,
-                "viz": false,
-                "legend": false
-              },
-              "lineInterpolation": "smooth",
-              "lineWidth": 2,
-              "pointSize": 5,
-              "scaleDistribution": {
-                "type": "linear"
-              },
-              "showPoints": "never",
-              "spanNulls": false,
-              "stacking": {
-                "group": "A",
-                "mode": "none"
-              },
-              "thresholdsStyle": {
-                "mode": "off"
-              }
-            },
-            "mappings": [],
-            "max": 600,
-            "min": 0,
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "red",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 60
-                },
-                {
-                  "color": "green",
-                  "value": 180
-                }
-              ]
-            },
-            "unit": "s"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 8
-        },
-        "id": 4,
-        "options": {
-          "legend": {
-            "calcs": ["mean", "max", "min"],
-            "displayMode": "table",
-            "placement": "bottom",
-            "showLegend": true
-          },
-          "tooltip": {
-            "mode": "multi",
-            "sort": "desc"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 30,
-            "max": 600,
-            "alias": "Average Session Duration"
-          }
-        ],
-        "title": "Session Duration",
-        "type": "timeseries"
-      },
-      {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": [
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Home"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "blue",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Products"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "green",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "About"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "purple",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Contact"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "orange",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            },
-            {
-              "matcher": {
-                "id": "byName",
-                "options": "Checkout"
-              },
-              "properties": [
-                {
-                  "id": "color",
-                  "value": {
-                    "fixedColor": "red",
-                    "mode": "fixed"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 0,
-          "y": 16
-        },
-        "id": 5,
-        "options": {
-          "displayLabels": ["percent"],
-          "legend": {
-            "displayMode": "table",
-            "placement": "right",
-            "showLegend": true,
-            "values": ["value", "percent"]
-          },
-          "pieType": "pie",
-          "reduceOptions": {
-            "values": false,
-            "calcs": ["lastNotNull"],
-            "fields": ""
-          },
-          "tooltip": {
-            "mode": "single",
-            "sort": "none"
-          }
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 15000,
-            "max": 20000,
-            "alias": "Home"
-          },
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "B",
-            "scenarioId": "random_walk",
-            "min": 8000,
-            "max": 12000,
-            "alias": "Products"
-          },
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "C",
-            "scenarioId": "random_walk",
-            "min": 3000,
-            "max": 6000,
-            "alias": "About"
-          },
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "D",
-            "scenarioId": "random_walk",
-            "min": 2000,
-            "max": 4000,
-            "alias": "Contact"
-          },
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "E",
-            "scenarioId": "random_walk",
-            "min": 5000,
-            "max": 8000,
-            "alias": "Checkout"
-          }
-        ],
-        "title": "Top Pages by Views",
-        "type": "piechart"
-      },
-      {
-        "datasource": {
-          "type": "testdata",
-          "uid": "-- Grafana --"
-        },
-        "fieldConfig": {
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "mappings": [],
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "green",
-                  "value": null
-                },
-                {
-                  "color": "yellow",
-                  "value": 5000
-                },
-                {
-                  "color": "blue",
-                  "value": 8000
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": []
-        },
-        "gridPos": {
-          "h": 8,
-          "w": 12,
-          "x": 12,
-          "y": 16
-        },
-        "id": 6,
-        "options": {
-          "colorMode": "value",
-          "graphMode": "area",
-          "justifyMode": "auto",
-          "orientation": "auto",
-          "reduceOptions": {
-            "values": false,
-            "calcs": ["lastNotNull"],
-            "fields": ""
-          },
-          "textMode": "auto"
-        },
-        "targets": [
-          {
-            "datasource": {
-              "type": "testdata",
-              "uid": "-- Grafana --"
-            },
-            "refId": "A",
-            "scenarioId": "random_walk",
-            "min": 3000,
-            "max": 10000
-          }
-        ],
-        "title": "Current Active Users",
-        "type": "stat"
+        }
       }
     ],
-    "schemaVersion": 38,
-    "style": "dark",
-    "tags": ["applications", "web", "analytics"],
-    "templating": {
-      "list": []
+    "cursorSync": "Crosshair",
+    "editable": true,
+    "elements": {
+      "panel-1": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Active Users",
+                        "max": 10000,
+                        "min": 1000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 1,
+          "links": [],
+          "title": "Active Users",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 20,
+                    "gradientMode": "opacity",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "max": 10000,
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "max",
+                    "last"
+                  ],
+                  "displayMode": "table",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "desc"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-2": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Page Views",
+                        "max": 50000,
+                        "min": 10000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 2,
+          "links": [],
+          "title": "Page Views",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 80,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "max": 50000,
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      }
+                    ]
+                  },
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "sum",
+                    "mean"
+                  ],
+                  "displayMode": "table",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-3": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Bounce Rate",
+                        "max": 80,
+                        "min": 20,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 3,
+          "links": [],
+          "title": "Bounce Rate",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 20,
+                    "gradientMode": "opacity",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "max": 100,
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 50
+                      },
+                      {
+                        "color": "red",
+                        "value": 70
+                      }
+                    ]
+                  },
+                  "unit": "percent"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "last"
+                  ],
+                  "displayMode": "table",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "desc"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-4": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Average Session Duration",
+                        "max": 600,
+                        "min": 30,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 4,
+          "links": [],
+          "title": "Session Duration",
+          "vizConfig": {
+            "group": "timeseries",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 20,
+                    "gradientMode": "opacity",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 2,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "never",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "max": 600,
+                  "min": 0,
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "red",
+                        "value": 0
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 60
+                      },
+                      {
+                        "color": "green",
+                        "value": 180
+                      }
+                    ]
+                  },
+                  "unit": "s"
+                },
+                "overrides": []
+              },
+              "options": {
+                "legend": {
+                  "calcs": [
+                    "mean",
+                    "max",
+                    "min"
+                  ],
+                  "displayMode": "table",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "multi",
+                  "sort": "desc"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-5": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Home",
+                        "max": 20000,
+                        "min": 15000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Products",
+                        "max": 12000,
+                        "min": 8000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "B"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "About",
+                        "max": 6000,
+                        "min": 3000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "C"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Contact",
+                        "max": 4000,
+                        "min": 2000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "D"
+                  }
+                },
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "alias": "Checkout",
+                        "max": 8000,
+                        "min": 5000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "E"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 5,
+          "links": [],
+          "title": "Top Pages by Views",
+          "vizConfig": {
+            "group": "piechart",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "fixedColor": "#73BF69",
+                    "mode": "thresholds"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  },
+                  "unit": "short"
+                },
+                "overrides": [
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Home"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "blue",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Products"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "green",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "About"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "purple",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Contact"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "orange",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "matcher": {
+                      "id": "byName",
+                      "options": "Checkout"
+                    },
+                    "properties": [
+                      {
+                        "id": "color",
+                        "value": {
+                          "fixedColor": "red",
+                          "mode": "fixed"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "options": {
+                "displayLabels": [
+                  "percent"
+                ],
+                "legend": {
+                  "displayMode": "table",
+                  "placement": "right",
+                  "showLegend": true,
+                  "values": [
+                    "value",
+                    "percent"
+                  ]
+                },
+                "pieType": "pie",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      },
+      "panel-6": {
+        "kind": "Panel",
+        "spec": {
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "-- Grafana --"
+                      },
+                      "group": "testdata",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "max": 10000,
+                        "min": 3000,
+                        "scenarioId": "random_walk"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {},
+              "transformations": []
+            }
+          },
+          "description": "",
+          "id": 6,
+          "links": [],
+          "title": "Current Active Users",
+          "vizConfig": {
+            "group": "stat",
+            "kind": "VizConfig",
+            "spec": {
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "yellow",
+                        "value": 5000
+                      },
+                      {
+                        "color": "blue",
+                        "value": 8000
+                      }
+                    ]
+                  },
+                  "unit": "short"
+                },
+                "overrides": []
+              },
+              "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "percentChangeColorMode": "standard",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": false
+                },
+                "showPercentChange": false,
+                "textMode": "auto",
+                "wideLayout": true
+              }
+            },
+            "version": "13.2.3"
+          }
+        }
+      }
     },
-    "time": {
+    "layout": {
+      "kind": "GridLayout",
+      "spec": {
+        "items": [
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-1"
+              },
+              "height": 8,
+              "width": 12,
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-2"
+              },
+              "height": 8,
+              "width": 12,
+              "x": 12,
+              "y": 0
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-3"
+              },
+              "height": 8,
+              "width": 12,
+              "x": 0,
+              "y": 8
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-4"
+              },
+              "height": 8,
+              "width": 12,
+              "x": 12,
+              "y": 8
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-5"
+              },
+              "height": 8,
+              "width": 12,
+              "x": 0,
+              "y": 16
+            }
+          },
+          {
+            "kind": "GridLayoutItem",
+            "spec": {
+              "element": {
+                "kind": "ElementReference",
+                "name": "panel-6"
+              },
+              "height": 8,
+              "width": 12,
+              "x": 12,
+              "y": 16
+            }
+          }
+        ]
+      }
+    },
+    "links": [],
+    "liveNow": false,
+    "preload": false,
+    "tags": [
+      "applications",
+      "web",
+      "analytics"
+    ],
+    "timeSettings": {
+      "autoRefresh": "",
+      "autoRefreshIntervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "fiscalYearStartMonth": 0,
       "from": "now-6h",
+      "hideTimepicker": false,
+      "timezone": "browser",
       "to": "now"
     },
-    "timepicker": {},
-    "timezone": "",
     "title": "Web Analytics",
-    "uid": "web-analytics",
-    "version": 1,
-    "weekStart": ""
+    "variables": []
   }
 }
